@@ -1,16 +1,32 @@
-# React + Vite
+# 💄 Projeto Final React - Vai Na Web x L'Oréal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="src/assets/imagens/Banner.png" alt="Banner do Projeto" width="100%">
+</div>
 
-Currently, two official plugins are available:
+## 📋 Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido como o **Desafio Final do Módulo de React** do curso **Vai Na Web**, em parceria técnica com a **L'Oréal**.
 
-## React Compiler
+O objetivo foi criar uma **Landing Page Responsiva** para uma marca de beleza fictícia ("Passoia"), aplicando conceitos fundamentais do React e boas práticas de estilização com SASS. O foco principal foi a criação de componentes funcionais, gerenciamento de estado e layout fiel ao design proposto no Figma.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) **React.js (Vite):** Biblioteca principal para construção da interface.
+* ![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) **SASS/SCSS:** Pré-processador CSS para estilização avançada, uso de variáveis e aninhamento.
+* ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **JavaScript (ES6+):** Lógica de interação.
+* ![Vite](https://img.shields.io/badge/Vite-B33542?style=for-the-badge&logo=vite&logoColor=white) **Vite:** Build tool para um ambiente de desenvolvimento rápido.
+
+## ✨ Funcionalidades
+
+* **🎨 Seletor de Cores Interativo:** Utilização do hook `useState` para alterar a imagem principal do produto (batom) dinamicamente ao clicar nas opções de cores.
+* **📱 Design Responsivo:** Layout adaptável para Desktops, Tablets e Dispositivos Móveis (Mobile First/Media Queries).
+* **✨ Efeitos Visuais:** Transições suaves (`fade-in`) na troca de imagens e efeitos de hover em botões e cards.
+* **🛍️ Vitrine de Produtos:** Estrutura organizada com Flexbox para alinhamento perfeito de imagens e informações.
+* **🦶 Footer Estruturado:** Rodapé com seções de atendimento, formas de pagamento e redes sociais organizadas.
+
+## 📂 Estrutura do Projeto
+
+O projeto segue uma arquitetura de pastas organizada por componentes:
