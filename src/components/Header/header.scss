@@ -3,7 +3,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
+    width: 100%; 
+    padding: 20px 50px; 
+    background-color: #fff; 
+    
+    
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     ul{
         display: flex;
@@ -12,6 +20,39 @@ header {
         width: 35vw;
         justify-content: space-around;
         flex-wrap: wrap;
+    }
+
+    li{
+        a {
+                text-decoration: none; 
+                color: #000; 
+                font-weight: 500;
+                position: relative; 
+                
+                
+                &::after {
+                    content: ''; 
+                    position: absolute;
+                    width: 0%; 
+                    height: 2px; 
+                    bottom: -5px; 
+                    left: 0;
+                    background-color: #F20E1B; 
+                    transition: width 0.3s ease-in-out; 
+                }
+
+                /* QUANDO PASSAR O MOUSE */
+                &:hover::after {
+                    width: 100%; /* O traço cresce para 100% da largura */
+                }
+            }
+    }
+        
+
+    .logomarca {
+        width: 225.61px;
+        height: 75.71px;
+        object-fit: contain;
     }
 }
 

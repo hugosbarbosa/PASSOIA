@@ -1,0 +1,148 @@
+@use '../../styles/base/variables' as *;
+
+.lancamentos-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    width: 100%; 
+
+    h2 {
+        font-size: $font-size-xl;
+        margin-bottom: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+    .painel-conteudo {
+        display: flex;          
+        justify-content: center;
+        align-items: flex-start; /* Alinha tudo pelo topo */
+        gap: 40px;              
+        max-width: 1200px;      
+        margin: 0 auto;        
+
+        @media (max-width: 850px) {
+            flex-direction: column;
+            align-items: center;
+            // No celular destravamos a altura
+            .coluna-principal img, .coluna-info { height: auto !important; }
+        }
+    }
+
+    // 1. COLUNA ESQUERDA
+    .coluna-thumbs {
+        display: flex;
+        flex-direction: column; 
+        gap: 15px;
+
+        img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover; 
+            border: 1px solid #eee;
+            cursor: pointer;
+            display: block;
+        }
+    }
+
+    // 2. COLUNA DO MEIO (IMAGEM)
+    .coluna-principal {
+        img {
+            width: 100%; 
+            max-width: 450px; 
+            
+            height: 420px; 
+            
+            object-fit: cover; 
+            display: block; 
+            padding: 0;
+            animation: aparecerSuave 0.6s ease-in-out;
+        }
+    }
+
+    // 3. COLUNA DIREITA (CARD)
+    .coluna-info {
+        text-align: left;
+        max-width: 500px;
+        width: 477px;
+
+        height: 420px; 
+        box-shadow: 0px 3px 3px 2px rgba(0,0,0,0.19);
+        background-color: #ffffff; 
+        
+        box-sizing: border-box; 
+        padding: 35px; 
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+            line-height: 1;
+            margin-top: 0;
+        }
+
+        .estrelas-container {
+            display: flex;
+            margin-bottom: 10px;
+            img { width: 109.99; height: 35.1px; }
+        }
+
+        .subtitulo {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .seletor-cores {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+
+            .btn-cor-img {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                img {
+                    width: 40px; 
+                    height: 40px;
+                    border-radius: 50%; 
+                    transition: transform 0.2s;
+                }
+                &:hover img { transform: scale(1.1); }
+            }
+        }
+
+        .descricao-texto {
+             h4 {
+                font-size: 2rem;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+            p {
+                font-size: 1.4rem;
+                line-height: 1.5;
+                color: #555;
+                text-align: left;
+                overflow: hidden; 
+                text-align: justify;
+            }
+        }
+    }
+}
+
+@keyframes aparecerSuave {
+    from {
+        opacity: 0.8;
+
+    }
+    to {
+        opacity: 1;
+    }
+}

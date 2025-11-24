@@ -7,9 +7,9 @@ function Header(){
         <header>
             <img src={logomarca} alt="logo marca da pagina" />
             <ul>
-                <li>LOOKS</li>
-                <li>LANÇAMENTOS</li>
-                <li>NOVIDADE</li>
+                <li><a href="#looks-sectionid">LOOKS</a></li>
+                <li><a href="#lancamentos">LANÇAMENTOS</a></li>
+                <li><a href="#novidade">NOVIDADE</a></li>
             </ul>
         </header>
     )
