@@ -2,147 +2,189 @@
 
 .lancamentos-section {
     padding: 50px 20px;
-    text-align: center;
     background-color: #fff;
     width: 100%; 
+    display: flex;
+    justify-content: center;
 
+    // --- ESTILOS GERAIS ---
     h2 {
-        font-size: $font-size-xl;
-        margin-bottom: 50px;
+        font-size: 3.2rem; // Fonte Grande
+        margin-bottom: 40px;
         font-family: Arial, Helvetica, sans-serif;
-        color: #333;
+        color: #222;
         text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
     }
 
-    .painel-conteudo {
-        display: flex;          
+    // Container que segura as 3 colunas
+    .conteudo-desktop {
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Alinha tudo pelo topo */
-        gap: 40px;              
-        max-width: 1200px;      
-        margin: 0 auto;        
-
-        @media (max-width: 850px) {
-            flex-direction: column;
-            align-items: center;
-            // No celular destravamos a altura
-            .coluna-principal img, .coluna-info { height: auto !important; }
-        }
+        align-items: flex-start;
+        gap: 40px;
+        max-width: 1200px;
     }
 
-    // 1. COLUNA ESQUERDA
+    // 1. COLUNA THUMBS (Esquerda)
     .coluna-thumbs {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         gap: 15px;
-
         img {
             width: 130px;
             height: 130px;
-            object-fit: cover; 
+            object-fit: cover;
             border: 1px solid #eee;
             cursor: pointer;
             display: block;
         }
     }
 
-    // 2. COLUNA DO MEIO (IMAGEM)
+    // 2. COLUNA PRINCIPAL (Meio)
     .coluna-principal {
         img {
-            width: 100%; 
-            max-width: 450px; 
-            
-            height: 420px; 
-            
-            object-fit: cover; 
-            display: block; 
-            padding: 0;
+            width: 420px; // Largura fixa no Desktop
+            height: 420px; // Altura fixa no Desktop (Quadrado)
+            object-fit: cover;
+            display: block;
             animation: aparecerSuave 0.6s ease-in-out;
         }
     }
 
-    // 3. COLUNA DIREITA (CARD)
+    // 3. COLUNA INFO (Direita) - CARD NO DESKTOP
     .coluna-info {
         text-align: left;
-        max-width: 500px;
-        width: 477px;
+        max-width: 350px;
+        width: 420px; // Mesma largura da foto
+        height: 420px; // Mesma altura da foto
 
-        height: 420px; 
-        box-shadow: 0px 3px 3px 2px rgba(0,0,0,0.19);
+        // --- ESTILO DE CARD (SÓ NO DESKTOP) ---
         background-color: #ffffff; 
-        
+        border: 1px solid #e0e0e0; // Borda cinza suave
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+        padding: 30px; 
         box-sizing: border-box; 
-        padding: 35px; 
+        // -------------------------------------
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between; 
-
-        h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            font-weight: bold;
-            line-height: 1;
-            margin-top: 0;
-        }
+        justify-content: center; 
 
         .estrelas-container {
-            display: flex;
             margin-bottom: 10px;
-            img { width: 109.99; height: 35.1px; }
+            img { width: 140px; height: auto; }
+        }
+
+        h3 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #222;
+            line-height: 1;
         }
 
         .subtitulo {
-            font-size: 0.9rem;
+            font-size: 1.4rem;
             color: #666;
-            margin-bottom: 10px;
-            font-weight: bold;
+            margin-bottom: 15px;
+            font-weight: normal;
         }
 
         .seletor-cores {
             display: flex;
             gap: 15px;
             margin-bottom: 25px;
-
             .btn-cor-img {
                 background: none;
                 border: none;
                 padding: 0;
                 cursor: pointer;
                 img {
-                    width: 40px; 
-                    height: 40px;
+                    width: 55px; 
+                    height: 55px; 
                     border-radius: 50%; 
                     transition: transform 0.2s;
                 }
-                &:hover img { transform: scale(1.1); }
+                &:hover img { transform: scale(1.3);}
             }
         }
 
         .descricao-texto {
              h4 {
                 font-size: 2rem;
-                margin-bottom: 8px;
+                margin-bottom: 10px;
                 font-weight: bold;
+                color: #222;
             }
             p {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
                 line-height: 1.5;
-                color: #555;
+                color: #444;
                 text-align: left;
-                overflow: hidden; 
-                text-align: justify;
+                overflow: hidden;
             }
         }
     }
 }
 
+// Animação
 @keyframes aparecerSuave {
-    from {
-        opacity: 0.8;
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
 
-    }
-    to {
-        opacity: 1;
+// --- RESPONSIVIDADE  ---
+@media (max-width: 850px) {
+    .lancamentos-section {
+        padding: 20px; 
+
+        
+        .wrapper-card-mobile {
+            background-color: #fff;
+            border: 1px solid #e0e0e0; 
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .conteudo-desktop {
+            flex-direction: column; 
+            align-items: center;
+            gap: 0;
+        }
+
+        
+        .coluna-thumbs {
+            display: none;
+        }
+
+       
+        .coluna-principal img {
+            width: 100% !important; 
+            height: auto !important; 
+            max-width: 350px;
+            margin-bottom: 20px;
+        }
+
+        
+        .coluna-info {
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            width: 100%;
+            height: auto; 
+            align-items: center; 
+            text-align: center; 
+
+            p { text-align: center; } 
+        }
     }
 }

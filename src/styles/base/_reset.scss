@@ -5,12 +5,20 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    text-decoration: none;
+    text-decoration: none; 
+   
   }
+
+  html, body {
+    width: 100%;
+    max-width: 100vw; 
+    overflow-x: hidden; 
+}
 
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    
 
   }
   
@@ -19,6 +27,7 @@
     font-size: $font-size-base;
     color: $text-color;
     background-color: $background-color;
+    
   }
   
   a {

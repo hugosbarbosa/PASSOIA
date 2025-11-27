@@ -76,19 +76,38 @@ footer {
 // Responsividade (Celular)
 @media (max-width: 768px) {
     footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row; 
+        flex-wrap: wrap;     
+        align-items: flex-start;
+        text-align: left;    
+        justify-content: space-between;
     }
 
-    .atendimento, .pagamento, .redes-sociais {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 30px;
+    
+    .atendimento {
+        width: 50%; 
+        margin-bottom: 20px;
+        padding-right: 10px; 
     }
 
-    .pagamento .icones-pagamento {
-        justify-content: center;
-        margin: 0 auto;
+    
+    .pagamento {
+        width: 50%; 
+        margin-bottom: 20px;
+        padding-left: 10px; 
+
+        .icones-pagamento {
+            justify-content: flex-start; 
+            flex-wrap: wrap;
+            max-width: 200px;
+            gap: 10px; 
+        }
+    }
+
+    
+    .redes-sociais {
+        width: 100%; 
+        text-align: left;
+        margin-top: 10px;
     }
 }

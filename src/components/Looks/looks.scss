@@ -3,6 +3,7 @@
 .looks-section {
     padding: 20px;
     text-align: center;
+    width: 100%; 
 
     h2 {
         font-size: $font-size-xl;
@@ -20,11 +21,11 @@
         img {
             cursor: pointer;
             transition: transform 0.3s ease;
-            
-          
             max-width: 100%;
             height: auto;
-             width: 280px; 
+            
+            
+            width: 280px; 
             
             &:hover {
                 transform: scale(1.05); 
@@ -35,7 +36,19 @@
 
 /* Responsividade para Celular (Mobile) */
 @media (max-width: 768px) {
+    
+    .looks-section {
+        padding: 20px 10px; 
+    }
+
+    
+    .looks-section .cards {
+        gap: 10px; 
+    }
+
+    
     .looks-section .cards img {
-        width: 45%; 
+        
+        width: calc(50% - 5px); 
     }
 }
