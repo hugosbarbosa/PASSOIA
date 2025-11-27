@@ -2,24 +2,27 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
     width: 100%; 
-    padding: 20px 50px; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+
+    padding: 40px 50px; 
+
     background-color: #fff; 
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #e0e0e0; // Aquela linha sutil que você pediu
+    border-bottom: 1px solid #e0e0e0;
 
-    // --- LOGOMARCA ---
     .logomarca {
-        width: 150px; // Ajuste o tamanho conforme preferir
+        width: 200px; 
         height: auto;
         object-fit: contain;
     }
 
-    // --- BOTÃO HAMBÚRGUER (NOVO) ---
-    // Começa invisível no computador
+    // --- BOTÃO HAMBÚRGUER ---
+    
     .burguer {
         display: none; 
         cursor: pointer;
@@ -48,7 +51,7 @@ header {
                     font-weight: 500;
                     position: relative; 
                     
-                    // O tracinho vermelho
+                    
                     &::after {
                         content: ''; 
                         position: absolute;
@@ -68,40 +71,40 @@ header {
         }
     }
 
-    // --- RESPONSIVIDADE (A MÁGICA DO CELULAR) ---
+    // --- RESPONSIVIDADE ---
     @media (max-width: 768px) {
-        padding: 20px 20px; // Diminui o espaço lateral
+        padding: 20px 20px; 
 
-        // 1. Faz o botão aparecer
+        
         .burguer {
             display: block; 
         }
 
-        // 2. Transforma o menu em uma "gaveta"
+        
         .menu-navegacao {
-            position: absolute; // Solta ele do header
-            top: 100%; // Cola logo abaixo do header
+            position: absolute; 
+            top: 100%;
             left: 0;
             width: 100%;
             background-color: #fff;
             
-            // Começa FECHADO
+            
             height: 0;
-            overflow: hidden; // Esconde o que não cabe
-            transition: height 0.3s ease-in-out; // Animação de descer
-            box-shadow: 0px 10px 10px rgba(0,0,0,0.05); // Sombra extra embaixo
+            overflow: hidden; 
+            transition: height 0.3s ease-in-out; 
+            box-shadow: 0px 10px 10px rgba(0,0,0,0.05); 
 
-            // Quando o React adicionar a classe "open":
+            
             &.open {
-                height: 200px; // Altura suficiente para mostrar os links
+                height: 200px; 
             }
 
-            // Muda a lista para vertical
+            
             ul {
-                flex-direction: column; // Um embaixo do outro
+                flex-direction: column; 
                 width: 100%;
                 padding: 20px 0;
-                gap: 20px; // Espaço entre os links
+                gap: 20px; 
             }
         }
     }
